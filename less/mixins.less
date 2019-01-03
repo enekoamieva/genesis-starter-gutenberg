@@ -1,0 +1,52 @@
+/*** Non parametrics ***/
+.clearfix() { //https://gist.github.com/geddski/2416187
+    zoom: 1;
+    &:before, &:after { content:""; display:table; }
+    &:after { clear: both; }
+}
+
+.common-btn() {
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    .font-size(16);
+}
+
+
+/*** Parametrics ***/
+//Font size in px & rem
+.font-size(@size) {
+    @rem: @size / 10; //Tamaño base
+    font-size: @size * 1px; //Return font size in px
+    font-size: @rem * 1rem; //Return font size in rem
+}
+
+//Line height in px & rem
+.line-height(@size) {
+    @rem: @size / 10; //Tamaño base
+    line-height: @size * 1px; //Return line height in px
+    line-height: @rem * 1rem; //Return line height in rem
+}
+
+//Color buttons
+.color-btn(@color) {
+    background-color: @color;
+    color: #fff;
+    &:hover, &:active {
+        background-color: lighten(@color, 10%);
+    }
+    .common-btn;
+}
+
+//Inverse color buttons
+.color-btn-inverse(@color) {
+    background-color: #fff;
+    color: @color;
+    &:hover, &:active {
+        background-color: @color;
+        color: #fff;
+    }
+    .common-btn;
+}
