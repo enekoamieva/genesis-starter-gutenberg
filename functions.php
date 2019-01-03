@@ -76,6 +76,14 @@ function genesis_starter_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION
 	);
 
+	//Fontawesome
+	wp_enqueue_style( 
+		'font-awesome', 
+		get_stylesheet_directory_uri().'/fontawesome/css/all.min.css', 
+		array(), 
+		'v5.6.1'
+	);
+
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
